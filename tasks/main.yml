@@ -1,0 +1,29 @@
+---
+- name: Install mc
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ mc_package }}"
+
+- name: Create dir for configuration
+  file:
+    path: "{{ lookup('env','HOME') }}/.config/mc"
+    state: directory
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
+
+- name: Setup settings file
+  template:
+    src: ini.j2
+    dest: "{{ lookup('env','HOME') }}/.config/mc/ini"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
+    mode: u=rw,g=r,o=r
+
+- name: Setup ext file
+  template:
+    src: mc.ext.j2
+    dest: "{{ lookup('env','HOME') }}/.config/mc/mc.ext"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
+    mode: u=rw,g=r,o=r
