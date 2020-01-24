@@ -12,3 +12,5 @@ Typical playbook
     - mc
   tags: mc
 ```  
+
+All the settings of mc are standard apart from color scheme. You can change it via `mc_color_scheme` variable. If you want to use the default color scheme, please live this variable blank.
