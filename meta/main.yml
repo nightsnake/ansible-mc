@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Aleksey Uchakin a.k.a. Night_Snake
+  description: Role for set up midnight commander
+  company: Nixman.info
+  min_ansible_version: 2.2
+  github_branch:
+  - name: Ubuntu
+    versions:
+    - xenial
+    - bionic
