@@ -20,7 +20,7 @@
     group: "{{ lookup('env','USER') }}"
     mode: u=rw,g=r,o=r
 
-- name: Setup settings file for root
+- name: Setup settings file for root (dedicated)
   template:
     src: ini.j2
     dest: "/root/.config/mc/ini"
@@ -36,7 +36,7 @@
     group: "{{ lookup('env','USER') }}"
     mode: u=rw,g=r,o=r
 
-- name: Setup ext file for root
+- name: Setup ext file for root (dedicated)
   template:
     src: mc.ext.j2
     dest: "/root/.config/mc/mc.ext"
