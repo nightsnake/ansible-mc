@@ -20,6 +20,13 @@
     group: "{{ lookup('env','USER') }}"
     mode: u=rw,g=r,o=r
 
+- name: Create config dir for root
+  file:
+    path: "/root/.config/mc"
+    state: directory
+    owner: "root"
+    group: "root"
+
 - name: Setup settings file for root (dedicated)
   template:
     src: ini.j2
